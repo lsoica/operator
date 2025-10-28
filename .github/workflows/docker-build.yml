@@ -41,8 +41,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: minio-operator          # ← THIS IS THE FIX
-          file: minio-operator/Dockerfile  # ← explicit Dockerfile
+          context: .                     # ← root of repo
+          file: ./Dockerfile             # ← explicit path
           push: true
           platforms: linux/amd64,linux/arm64
           tags: |
